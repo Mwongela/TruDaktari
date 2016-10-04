@@ -1,0 +1,13 @@
+<ion-view view-title="Useful Information">
+  <ion-content>
+
+    <div class="list card">
+
+      <a class="item item-icon-right" ng-repeat="item in data" href="#/app/info/{{item.title}}">
+        <i class="icon ion-ios-arrow-right"></i>
+        {{item.title}}
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>

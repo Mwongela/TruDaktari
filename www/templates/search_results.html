@@ -1,0 +1,22 @@
+<ion-view view-title="Search Results">
+  <ion-content>
+    
+    <div class="row">
+      <div class="col">
+        <p>Search Results for "<span style="font-weight: bold; font-style: italic;">{{query}}</span>"</p>
+    </div>
+      </div>
+    </div>
+
+    <div class="list card" style="margin-top: 0; margin-bottom: 0;">
+
+      <a class="item item-avatar" href="#/app/{{queryType}}/{{item.reg_no}}" ng-repeat="item in data">
+        <img src="{{url}}">
+        <h3>{{item.name}}<span style="float: right">{{item.reg_no}}</span></h3>
+        <p>{{item.info}}</p>
+      </a>
+
+    </div>
+
+  </ion-content>
+</ion-view>

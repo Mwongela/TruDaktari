@@ -1,0 +1,66 @@
+<ion-view view-title="Doctor Details">
+  <ion-content>
+    
+    <div class="row">
+
+      <div class="col">
+
+        <div class="list card">
+
+          <div class="item">
+            
+            <h2>{{doctor.name}}</h2>
+            <p>{{doctor.speciality}}</p>
+          </div>
+
+          <div class="item item-image">
+            <img src="http://trudaktari.azadautoworks.com/images/generic_profile.png">
+          </div>
+
+          <div class="item">
+            <p>Registration Number</p>
+            <h2>{{doctor.reg_no}}</h2>
+          </div>
+
+          <div class="item">
+            <p>Registration Date</p>
+            <h2>{{doctor.reg_date}}</h2>
+          </div>
+
+          <div class="item">
+            <p>Address</p>
+            <h2>{{doctor.address}}</h2>
+          </div>
+
+          <div class="item">
+            <p>Qualifications</p>
+            <h2 style="overflow: scroll;">{{doctor.qualifications}}</h2>
+          </div>
+
+          <div class="item">
+            <p>Speciality</p>
+            <h2>{{doctor.speciality}}</h2>
+          </div>
+
+          <div class="item">
+            <p>Sub-speciality</p>
+            <h2>{{doctor.sub_speciality}}</h2>
+          </div>
+
+          <div class="item">
+            <p>Action Set</p>
+            <div class="button-bar">
+              <a href="#/app/report/{{doctor.reg_no}}" class="button">Report</a>
+              <a href="#/app/rate/{{doctor.reg_no}}" class="button">Rate</a>
+              <a id="share" class="button">Share</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,45 @@
+<ion-view view-title="Search">
+  <ion-content>
+    
+  	<div class="row">
+      <div class="col col-33 col-offset-33">
+        <img class="col-center" style="width: 100%; margin-top: 20px; font-weight: 300;" src="./img/trudaktari.png" alt="logo"/>
+      </div>
+    </div>
+
+    <div class="row">
+    	<div class="col">
+
+    		<label class="item item-input item-select" style="border: none;">
+		    <div class="input-label">
+		      Search for a:-
+		    </div>
+		    <select ng-model="queryType">
+		      <option value="doctor" selected>Doctor</option>
+		      <option value="facility">Health Facility</option>
+		    </select>
+		  </label>
+
+    		<div class="list list-inset">
+			  <label class="item item-input">
+			    <i class="icon ion-ios-search placeholder-icon"></i>
+			    <input type="text" placeholder="Search for a doctor or facility" ng-model="query">
+			  </label>
+			</div>
+
+    	</div>
+    </div>
+
+    <div class="row">
+    	<div class="col-50 col-offset-25">
+    		<a href="#/app/search/{{queryType}}/{{query}}" class="button button-full button-light">
+    			<i class="icon ion-ios-search"></i>
+			  Search
+			</a>
+    	</div>
+    </div>
+
+  	
+
+  </ion-content>
+</ion-view>
