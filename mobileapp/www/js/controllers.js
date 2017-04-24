@@ -1,3 +1,8 @@
+/**
+ * controllers.js
+ * Specifies the various controllers & services in the app
+ */
+
 angular.module('starter.services', [])
 
   .service('usefulInfo', function() {});
@@ -53,38 +58,38 @@ angular.module('starter.controllers', [])
 
   .controller('MapController', function ($scope, $cordovaGeolocation) {
     var options = {timeout: 10000, enableHighAccuracy: true};
- 
+
     $cordovaGeolocation.getCurrentPosition(options).then(function(position){
-   
+
       var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-   
+
       var mapOptions = {
         center: latLng,
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
-   
+
       $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
       //Wait until the map is loaded
       google.maps.event.addListenerOnce($scope.map, 'idle', function(){
-       
+
         var marker = new google.maps.Marker({
             map: $scope.map,
             animation: google.maps.Animation.DROP,
             position: latLng
-        });      
-       
+        });
+
         var infoWindow = new google.maps.InfoWindow({
             content: "Here I am!"
         });
-       
+
         google.maps.event.addListener(marker, 'click', function () {
             infoWindow.open($scope.map, marker);
         });
-       
+
       });
-   
+
     }, function(error){
       console.log("Could not get location");
     });
@@ -144,7 +149,7 @@ angular.module('starter.controllers', [])
     var id = $stateParams.id;
 
     $scope.facility = {
-      
+
         name: "GERTRUDES CHILDRENS HOSPITAL - NAIROBI WEST CLINIC",
         reg_no: "002086",
         address: "P.O BOX 42325 00100 NAIROBI",
@@ -160,7 +165,7 @@ angular.module('starter.controllers', [])
         $scope.facility.address = data.address;
         $scope.facility.type = data.type;
         $scope.facility.bed_capacity = data.bed_capacity;
-        
+
       })
 
       .error(function(data) {
@@ -174,7 +179,7 @@ angular.module('starter.controllers', [])
   })
 
   .controller('RateController', function($scope) {
-    
+
   })
 
   .controller('SearchController', function ($scope, $stateParams, $http) {
